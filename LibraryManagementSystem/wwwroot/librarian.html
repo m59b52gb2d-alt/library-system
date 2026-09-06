@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Librarian Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 Library System
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+        </div>
+
+    </nav>
+
+    <section class="features">
+
+        <h1>👩‍💼 Librarian Dashboard</h1>
+
+        <div class="feature-card">
+
+            <h2>Add New Book</h2>
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Book Title"
+            >
+
+            <br><br>
+
+            <input
+                type="text"
+                id="author"
+                placeholder="Author"
+            >
+
+            <br><br>
+
+            <button onclick="addBook()">
+                Add Book
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+<script>
+    const role = localStorage.getItem("userRole");
+
+    if (role !== "Librarian") {
+        alert("Access denied!");
+        window.location.href = "/index.html";
+    }
+</script>
+
+</body>
+
+</html>
